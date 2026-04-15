@@ -1,4 +1,4 @@
-# Atividade Pontuada de Lógica de Programação
+# Atividade de Lógica de Programação
 
 # Adicionando Funcionalidades
 
