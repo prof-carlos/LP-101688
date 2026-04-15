@@ -1,32 +1,80 @@
-## Contexto:
-Você e um(a) colega são desenvolvedores de uma equipe de software responsável por criar soluções para o setor comercial. O mercado **Bom Preço** contratou seu time para desenvolver um sistema de compras que facilite o atendimento no caixa. A missão é criar um software que apresente um menu de produtos, permita ao cliente selecionar os itens desejados e, ao final, exiba uma nota fiscal simples com o resumo da compra.
+# Atividade Pontuada de Lógica de Programação
 
-## Desafio:
-Desenvolvam juntos um sistema que permita ao usuário visualizar um menu com **7 produtos de mercado**, escolher os itens que deseja comprar e informar a quantidade de cada produto. Ao final, o programa deverá gerar uma **nota fiscal**, mostrando o **nome do mercado**, os **itens escolhidos**, as **quantidades** e o **total a pagar**. Vocês irão atuar como uma equipe de desenvolvimento, trabalhando em dupla, com cada integrante contribuindo para a lógica e implementação do sistema.
+# Adicionando Funcionalidades
 
-## Regras do sistema:
-1. Exibir um menu com **7 produtos**, apresentando o **código do produto**, **nome** e o **preço unitário**.
-2. O usuário poderá inserir o código do produto desejado. Caso o código seja inválido, o sistema deve alertar o usuário e solicitar novamente um código válido.
-3. Após escolher um produto, o sistema deve solicitar a **quantidade** desejada.
-4. O sistema deverá perguntar ao usuário se ele deseja adicionar outro item e, se sim, permitir novas compras.
-5. O programa deve acumular os valores de cada item escolhido de acordo com a quantidade informada.
-6. Se o usuário digitar o código **"0"**, o programa encerrará a compra.
-7. Ao final, o sistema deve exibir uma **nota fiscal**, contendo:
-   - **Nome do mercado**;
-   - Lista com os **produtos escolhidos**;
-   - **Quantidade** de cada item;
-   - **Preço unitário** de cada produto;
-   - **Total de cada item**;
-   - **Valor total da compra**.
+Com base no código disponível neste repositório, você deverá adicionar as seguintes funcionalidades utilizando **funções**:
 
-## Exemplo de saída esperada:
-### Nota Fiscal
-**Mercado Bom Preço**
+1. **Calcular o IMC de cada usuário**:
+   - Fórmula do IMC:
+     ```
+     IMC = peso (kg) / altura² (m²)
+     ```
+   - Interpretação dos resultados do IMC:
+     - **Abaixo do peso**: IMC < 18,5
+     - **Peso normal**: 18,5 <= IMC < 25
+     - **Sobrepeso**: 25 <= IMC < 30
+     - **Obesidade grau I**: 30 <= IMC < 35
+     - **Obesidade grau II**: 35 <= IMC < 40
+     - **Obesidade grau III (mórbida)**: IMC >= 40
 
-- Arroz 5kg - Quantidade: 2 - Total: R$ XX,XX  
-- Leite 1L - Quantidade: 3 - Total: R$ XX,XX  
-- Café 500g - Quantidade: 1 - Total: R$ XX,XX  
+2. **Exibir informações completas de todos os usuários**, incluindo:
+   - O valor do IMC calculado.
+   - A situação de cada usuário com base no IMC (como "Abaixo do peso", "Peso normal", etc.).
+   - Solicitar o sobrenome de cada usuário e, ao exibir os dados, mostrar o **nome completo** (nome e sobrenome).
 
-**Total a pagar: R$ XX,XX**
 
-**Lembrem-se: organização, colaboração e atenção à lógica do programa são fundamentais para o sucesso de um projeto de desenvolvimento de software!**
+## Observações
+
+- O código já está funcional. Após adicionar as novas funcionalidades, certifique-se de que o código continue funcionando corretamente.
+- Realize os devidos testes para garantir que tudo funcione conforme esperado.
+
+
+## Código:
+Copie o código abaixo
+
+```
+import os
+
+# Função sem retorno.
+def logoSenai():
+    os.system("cls || clear")
+    print("=== SENAI === ")
+
+# Definindo listas vazias para armazenar os dados dos usuários
+nomes = []
+idades = []
+alturas = []
+pesos = []
+
+# Solicitando os dados dos usuários em um loop
+while True:
+    logoSenai()
+    nome = input("Digite o nome do usuário (ou digite 'sair' para encerrar): ")
+    
+    # Verificando se o usuário quer sair
+    if nome.lower() == 'sair':
+        break
+    
+    idade = int(input("Digite a idade do usuário: "))
+    altura = float(input("Digite a altura do usuário (em metros): "))
+    peso = float(input("Digite o peso do usuário (em quilogramas): "))
+    
+    # Adicionando os dados às listas
+    nomes.append(nome)
+    idades.append(idade)
+    alturas.append(altura)
+    pesos.append(peso)
+
+# Exibindo os dados armazenados
+logoSenai()
+print("\nDados dos usuários:")
+for i in range(len(nomes)):
+    print(f"Usuário {i+1}:")
+    print("Nome:", nomes[i])
+    print("Idade:", idades[i])
+    print("Altura:", alturas[i], "metros")
+    print("Peso:", pesos[i], "quilogramas")
+    print()
+```
+
+Bom desenvolvimento!
