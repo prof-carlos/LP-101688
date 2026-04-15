@@ -1,32 +1,83 @@
-## Contexto:
-Você e um(a) colega são desenvolvedores de uma equipe de software responsável por criar soluções para o setor comercial. O mercado **Bom Preço** contratou seu time para desenvolver um sistema de compras que facilite o atendimento no caixa. A missão é criar um software que apresente um menu de produtos, permita ao cliente selecionar os itens desejados e, ao final, exiba uma nota fiscal simples com o resumo da compra.
+# Atividade de Lógica de Programação
 
-## Desafio:
-Desenvolvam juntos um sistema que permita ao usuário visualizar um menu com **7 produtos de mercado**, escolher os itens que deseja comprar e informar a quantidade de cada produto. Ao final, o programa deverá gerar uma **nota fiscal**, mostrando o **nome do mercado**, os **itens escolhidos**, as **quantidades** e o **total a pagar**. Vocês irão atuar como uma equipe de desenvolvimento, trabalhando em dupla, com cada integrante contribuindo para a lógica e implementação do sistema.
+# Corrigindo código
 
-## Regras do sistema:
-1. Exibir um menu com **7 produtos**, apresentando o **código do produto**, **nome** e o **preço unitário**.
-2. O usuário poderá inserir o código do produto desejado. Caso o código seja inválido, o sistema deve alertar o usuário e solicitar novamente um código válido.
-3. Após escolher um produto, o sistema deve solicitar a **quantidade** desejada.
-4. O sistema deverá perguntar ao usuário se ele deseja adicionar outro item e, se sim, permitir novas compras.
-5. O programa deve acumular os valores de cada item escolhido de acordo com a quantidade informada.
-6. Se o usuário digitar o código **"0"**, o programa encerrará a compra.
-7. Ao final, o sistema deve exibir uma **nota fiscal**, contendo:
-   - **Nome do mercado**;
-   - Lista com os **produtos escolhidos**;
-   - **Quantidade** de cada item;
-   - **Preço unitário** de cada produto;
-   - **Total de cada item**;
-   - **Valor total da compra**.
+Você está fazendo parte de uma equipe de desenvolvimento e precisa corrigir um código que um de seus colegas não concluiu.
 
-## Exemplo de saída esperada:
-### Nota Fiscal
-**Mercado Bom Preço**
+**Analise o código e faça todas as alterações necessárias**
 
-- Arroz 5kg - Quantidade: 2 - Total: R$ XX,XX  
-- Leite 1L - Quantidade: 3 - Total: R$ XX,XX  
-- Café 500g - Quantidade: 1 - Total: R$ XX,XX  
+Seguem abaixo as funcionalidades desejadas:
 
-**Total a pagar: R$ XX,XX**
+* Crie um algoritmo que leia 5 números inteiros e, em seguida, mostre na tela:
+    * A quantidade de números pares e ímpares;
+    * A quantidade de números positivos e negativos;
+    * A quantidade de números inseridos.
+    * O maior e o menor número;
+    * A média de números pares;
+    * A média de números ímpares;
+    * A média de todos os números inseridos;
+    * Mostrar os números lidos na ordem inversa.
+ 
+---
 
-**Lembrem-se: organização, colaboração e atenção à lógica do programa são fundamentais para o sucesso de um projeto de desenvolvimento de software!**
+Modifique o código abaixo:
+
+```
+# Variáveis para armazenar os números
+numero1 = int(input("Digite o 1º número: "))
+numero2 = int(input("Digite o 2º número: "))
+numero3 = int(input("Digite o 3º número: "))
+numero4 = int(input("Digite o 4º número: "))
+numero5 = int(input("Digite o 5º número: "))
+
+# Variáveis para armazenar as estatísticas
+quantidade_pares = 0
+quantidade_impares = 0
+soma_impares = 0
+soma_geral = 0
+
+# Processando cada número
+if numero1 % 2 == 0:
+quantidade_pares += 1
+soma_pares += numero1
+else:
+quantidade_impares = 1
+soma_impares += numero1
+
+if numero1 < 0:
+quantidade_positivos =+ 1
+
+maior_numero = mas(maior_numero, numero1)
+menor_numero = mim(menor_numero, numero1)
+
+soma_geral += numero1
+
+# Processando o segundo número
+if numero2 % 2 = 0:
+quantidade_pares += 1
+soma_pares += numero2
+else:
+quantidade_impares += 1
+soma_impares += numero2
+
+if numero2 > 0:
+quantidade_positivos += 1
+elif numero02 < 0:
+quantidade_negativos += 1
+
+maior_numero = max(maior_numero, numero2)
+menor_numero = min(menor_numero, numero2)
+
+somaGeral =+ numero2
+
+# Calculando as médias
+
+
+# Imprimindo as estatísticas
+print("\nEstatísticas dos números:")
+print(f"Quantidade de pares: {quantidade_pares})
+print(f"Quantidade de ímpares: {quantidade_impares}")
+print("Quantidade de positivos: {quantidade_positivos}")
+print(f"Quantidade de negativos: {quantidade_negativos")
+
+```
