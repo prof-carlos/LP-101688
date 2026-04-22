@@ -1,83 +1,55 @@
-# Atividade de Lógica de Programação
+# Atividade: Sistema de Gestão de Reservas - Sweet Flight
 
-# Corrigindo código
+Algoritmo desenvolvido para auxiliar atendentes da companhia aérea **Sweet Flight** no controle de aeronaves, assentos e reservas de passagens.
 
-Você está fazendo parte de uma equipe de desenvolvimento e precisa corrigir um código que um de seus colegas não concluiu.
-
-**Analise o código e faça todas as alterações necessárias**
-
-Seguem abaixo as funcionalidades desejadas:
-
-* Crie um algoritmo que leia 5 números inteiros e, em seguida, mostre na tela:
-    * A quantidade de números pares e ímpares;
-    * A quantidade de números positivos e negativos;
-    * A quantidade de números inseridos.
-    * O maior e o menor número;
-    * A média de números pares;
-    * A média de números ímpares;
-    * A média de todos os números inseridos;
-    * Mostrar os números lidos na ordem inversa.
- 
 ---
 
-Modifique o código abaixo:
+## 🏗️ Estrutura de Dados e Armazenamento
 
-```
-# Variáveis para armazenar os números
-numero1 = int(input("Digite o 1º número: "))
-numero2 = int(input("Digite o 2º número: "))
-numero3 = int(input("Digite o 3º número: "))
-numero4 = int(input("Digite o 4º número: "))
-numero5 = int(input("Digite o 5º número: "))
+Para a persistência temporária dos dados, o sistema utiliza:
 
-# Variáveis para armazenar as estatísticas
-quantidade_pares = 0
-quantidade_impares = 0
-soma_impares = 0
-soma_geral = 0
+1.  **Vetor de Aviões:** Um vetor com **4 posições** para armazenar o número de identificação de cada aeronave.
+2.  **Vetor de Assentos:** Um vetor com **4 posições** para armazenar o quantitativo de assentos disponíveis em cada aeronave correspondente.
+3.  **Registro de Reserva:** Uma estrutura de dados composta (classe ou registro) contendo:
+    * `numero_aviao`
+    * `nome_passageiro`
 
-# Processando cada número
-if numero1 % 2 == 0:
-quantidade_pares += 1
-soma_pares += numero1
-else:
-quantidade_impares = 1
-soma_impares += numero1
+---
 
-if numero1 < 0:
-quantidade_positivos =+ 1
+## 📋 Menu de Opções
 
-maior_numero = mas(maior_numero, numero1)
-menor_numero = mim(menor_numero, numero1)
+O atendente terá acesso a um menu interativo com as seguintes funcionalidades:
 
-soma_geral += numero1
+1.  **Opção 1:** Registrar o número de cada avião.
+2.  **Opção 2:** Registrar o quantitativo de assentos disponíveis em cada avião.
+3.  **Opção 3:** Reservar passagem aérea.
+4.  **Opção 4:** Realizar consulta por avião.
+5.  **Opção 5:** Realizar consulta por passageiro.
+6.  **Opção 6:** Encerrar sistema.
 
-# Processando o segundo número
-if numero2 % 2 = 0:
-quantidade_pares += 1
-soma_pares += numero2
-else:
-quantidade_impares += 1
-soma_impares += numero2
+---
 
-if numero2 > 0:
-quantidade_positivos += 1
-elif numero02 < 0:
-quantidade_negativos += 1
+## ⚙️ Regras de Negócio e Diretrizes
 
-maior_numero = max(maior_numero, numero2)
-menor_numero = min(menor_numero, numero2)
+O algoritmo permite a realização de **até 20 reservas globais**. Abaixo estão os requisitos lógicos para cada opção:
 
-somaGeral =+ numero2
+### Gerenciamento de Dados
+* **Opção 1:** Devem ser informados os números dos 4 aviões disponíveis.
+* **Opção 2:** Devem ser informados os assentos disponíveis para cada avião previamente cadastrado.
 
-# Calculando as médias
+### Processo de Reserva (Opção 3)
+* **Validação de Existência:** Verificar se o número do avião informado existe. Caso contrário: `“Este avião não existe!”`.
+* **Validação de Vagas:** Verificar se há assentos disponíveis. Caso contrário: `“Não há assentos disponíveis para este avião!”`.
+* **Confirmação:** Se validado, solicitar nome do passageiro, reduzir a vaga no vetor de assentos e exibir: `“Reserva realizada com sucesso!”`.
+* **Limite:** O sistema deve impedir novas reservas após atingir o limite de 20 registros.
 
+### Consultas e Relatórios
+* **Por Avião (Opção 4):** * Verificar se o avião existe.
+    * Listar todas as reservas (nomes dos passageiros) vinculadas àquele avião.
+    * Se não houver reservas: `“Não há reservas realizadas para este avião!”`.
+* **Por Passageiro (Opção 5):**
+    * Listar todos os aviões em que o passageiro informado possui reserva.
+    * Se não encontrado: `“Não há reservas realizadas para este passageiro!”`.
 
-# Imprimindo as estatísticas
-print("\nEstatísticas dos números:")
-print(f"Quantidade de pares: {quantidade_pares})
-print(f"Quantidade de ímpares: {quantidade_impares}")
-print("Quantidade de positivos: {quantidade_positivos}")
-print(f"Quantidade de negativos: {quantidade_negativos")
-
-```
+### Encerramento
+* **Opção 6:** Finaliza a execução do algoritmo.
